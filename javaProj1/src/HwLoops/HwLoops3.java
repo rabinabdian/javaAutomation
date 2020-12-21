@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class HwLoops3 {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -18,7 +19,7 @@ public class HwLoops3 {
 
 			 userInput = myObj.nextLine(); // Read user input
 		}
-		System.out.println("-------- game over ---------");
+		System.out.println("-------- game over ----------1");
 //		 oddOrEven( Integer.parseInt(userInput));
 
 	}
