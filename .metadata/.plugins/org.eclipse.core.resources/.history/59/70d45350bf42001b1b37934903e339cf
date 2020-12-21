@@ -1,0 +1,37 @@
+package HwConditions;
+
+public class HwConditions2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int num = 5 ; 
+		
+	 if (num%2==0) {
+		System.out.println("number is even");
+	} else {
+		System.out.println("number is odd");
+
+	}
+	 
+	 
+		int a= 410 , b = 40 ;
+		
+		if (b<a) {
+			System.out.println(a + " is bigger than " + b );
+
+		} else if (a<b) {
+			System.out.println(b + " is bigger than " + a);
+
+		}
+		else {
+			System.out.println(a+" and " +b + " are equal ");
+
+		}
+
+	}
+
+
+	
+	
+}
