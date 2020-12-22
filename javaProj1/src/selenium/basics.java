@@ -1,5 +1,6 @@
 package selenium;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -13,8 +14,15 @@ public class basics {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Documents\\selenium\\drivers\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://www.automation.co.il");
+		driver.get("https://automation.co.il/tutorials/selenium/demo1/indexID.html");
+		// automation site form example 
+		// https://automation.co.il/tutorials/selenium/demo1/indexID.html
 		
+		
+		driver.findElement(By.id("firstname")).sendKeys("name");
+		driver.findElement(By.id("lastname")).sendKeys("last");
+		driver.findElement(By.id("email")).sendKeys("email@email.com");
+
 		
 	}
 
