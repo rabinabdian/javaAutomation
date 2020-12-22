@@ -30,7 +30,9 @@ public class readDataFromElement {
 		// We couldn't set up that account, sorry. Please try again, or contact an admin (link is above).
 
 	String name = 	driver.findElement(By.cssSelector("#user_name")).getAttribute("value");
-	System.out.println(name);
+	System.out.println(name); // name
+	
+	
 
 //		driver.quit();
 
