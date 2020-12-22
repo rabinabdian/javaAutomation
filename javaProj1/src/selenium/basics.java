@@ -44,6 +44,7 @@ public class basics {
 		Thread.sleep(2000);
 
 		driver.findElement(By.id("finish")).click();
+		driver.quit();
 
 	}
 
