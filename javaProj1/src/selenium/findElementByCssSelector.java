@@ -45,8 +45,9 @@ public class findElementByCssSelector {
 ////
 ////		driver.findElements(By.id("country")).get(2).click();
 		Thread.sleep(2000);
-//
-		driver.findElement(By.cssSelector("#finish")).click();
+
+		// using attribute 
+		driver.findElement(By.cssSelector("[name='finish']")).click();
 		Thread.sleep(2000);
 		driver.quit();
 
