@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class basics {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
 		System.setProperty("webdriver.chrome.driver",
@@ -24,10 +24,13 @@ public class basics {
 		driver.findElement(By.id("firstname")).sendKeys("name");
 		driver.findElement(By.id("lastname")).sendKeys("last");
 		driver.findElement(By.id("email")).sendKeys("email@email.com");
+		Thread.sleep(2000);
 		driver.findElement(By.id("next")).click();
 
 		// choose level form
 		driver.findElement(By.id("Advanced")).click();
+		Thread.sleep(2000);
+
 		driver.findElement(By.id("next")).click();
 
 // address form 
@@ -38,7 +41,8 @@ public class basics {
 //		driver.findElement(By.id("country")).click();
 //
 //		driver.findElements(By.id("country")).get(2).click();
-		
+		Thread.sleep(2000);
+
 		driver.findElement(By.id("finish")).click();
 
 	}
