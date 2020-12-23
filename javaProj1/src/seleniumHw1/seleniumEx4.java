@@ -1,5 +1,7 @@
 package seleniumHw1;
 
+import javax.print.attribute.standard.PrinterInfo;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,6 +28,12 @@ public class seleniumEx4 {
 		driver.findElement(By.cssSelector("#_nkw")).sendKeys("value input in nkw ");
 		Thread.sleep(2000);
 		WebElement element = driver.findElement(By.cssSelector("#_nkw"));
+		PrinterInfo(element);
+
+	}
+
+	private static void PrinterInfo(WebElement element) {
+		// TODO Auto-generated method stub
 		String text = element.getText();
 		String id = element.getAttribute("id");
 		String tag = element.getTagName();
