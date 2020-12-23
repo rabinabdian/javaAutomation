@@ -40,7 +40,7 @@ public class seleniumEx1 {
 //		Press on the search button on the top of the page (*can you do it?)
 		driver.navigate().back();
 		// driver.findElement(By.cssSelector("#LH_BIN")).click();
-		searchBtn.click();
+		//searchBtn.click();
 
 //////		driver.quit();
 
