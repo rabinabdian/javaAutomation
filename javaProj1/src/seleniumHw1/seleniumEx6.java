@@ -29,8 +29,7 @@ public class seleniumEx6 {
 		driver.manage().window().maximize();
 		driver.get("https://www.selenium.dev/");
 // Check if the title of this site is equal to “selenium web site” or contains “SeleniumHQ Browser Automation” (use getTitle()) and print yes/no
-		String titlElement = driver.getTitle();
-		if (titlElement.equalsIgnoreCase("selenium web site") || titlElement.toLowerCase().contains("seleniumhq")) {
+		if (siteTitleCheck(driver,"selenium web site","seleniumhq")) {
 
 			System.out.println("yes ---- selenium ");
 		}
@@ -42,8 +41,8 @@ public class seleniumEx6 {
 		 
 		driver.get("https://www.google.com/");
 		// Check if the title of this site is equal to “selenium web site” or contains “SeleniumHQ Browser Automation” (use getTitle()) and print yes/no
-				String titlElementq = driver.getTitle();
-				if (titlElementq.equalsIgnoreCase("google web site") || titlElementq.toLowerCase().contains("google")) {
+			
+				if (siteTitleCheck(driver,"google web site","google")) {
 
 					System.out.println("yes ---- google ");
 					driver.navigate().back();
@@ -51,13 +50,28 @@ public class seleniumEx6 {
 
 				}
 				
-				titlElementq = driver.getTitle();
+			
 				
-				if (titlElement.equalsIgnoreCase("selenium web site") || titlElement.toLowerCase().contains("seleniumhq")) {
+				if (siteTitleCheck(driver,"selenium web site","seleniumhq")) {
 
 					System.out.println("yes ---- selenium ");
 				}
 		
+	}
+
+	/**
+	 * @param driver 
+	 * @param titlElementq
+	 * @param string 
+	 * @return
+	 */
+	public static boolean siteTitleCheck(WebDriver driver, String equal, String contains) {
+		String titlElementq = driver.getTitle();
+		
+		if (titlElementq.equalsIgnoreCase(equal) || titlElementq.toLowerCase().contains(contains)) {
+			return true;
+		} 
+		return false;
 	}
 
 }
