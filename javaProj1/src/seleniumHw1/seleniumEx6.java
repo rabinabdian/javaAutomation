@@ -13,11 +13,13 @@ public class seleniumEx6 {
 
 	public static void main(String[] args) throws InterruptedException {
 		/*
-		 * Exercise 5: Should be implemented with ChromeDriver Open this site
-		 * https://login.salesforce.com/ Add user to the user name text box Add password
-		 * to the password text box Checked the ‘remember me’ check box Check if the
-		 * checkbox is checked, if yes Click the ‘Login’ button (you will get an error
-		 * message).
+		 * Exercise 6: Navigate to https://www.selenium.dev/ Check if the title of this
+		 * site is equal to “selenium web site” or contains “SeleniumHQ Browser
+		 * Automation” (use getTitle()) and print yes/no
+		 *  Navigate to 		 * https://www.google.com Check if the title of this site is equal to “Google”
+		 * or contains “google” (use getTitle()) and print yes/no. Navigate back. Check
+		 * again if the title of this site is equal to “selenium web site” or contains
+		 * “SeleniumHQ Browser Automation” (use getTitle()) and print yes/no
 		 * 
 		 */
 
@@ -25,30 +27,37 @@ public class seleniumEx6 {
 				"C:\\Users\\user\\Documents\\selenium\\drivers\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://login.salesforce.com");
+		driver.get("https://www.selenium.dev/");
+// Check if the title of this site is equal to “selenium web site” or contains “SeleniumHQ Browser Automation” (use getTitle()) and print yes/no
+		String titlElement = driver.getTitle();
+		if (titlElement.equalsIgnoreCase("selenium web site") || titlElement.toLowerCase().contains("seleniumhq")) {
 
-		driver.findElement(By.cssSelector("#username")).sendKeys("nipedo1843-tptf@force.com");
-		driver.findElement(By.cssSelector("#password")).sendKeys("RABrab26");
-		driver.findElement(By.cssSelector("#rememberUn")).click();
-		boolean rememberMeIsChecked = driver.findElement(By.cssSelector("#rememberUn")).isSelected();
-
-		if (rememberMeIsChecked) {
-			driver.findElement(By.cssSelector("#Login")).click();
-
+			System.out.println("yes ---- selenium ");
 		}
 
-	}
+		
+		
+		// Navigate to 		 * https://www.google.com Check if the title of this site is equal to “Google”
+		// * or contains “google” (use getTitle()) and print yes/no. Navigate back.
+		 
+		driver.get("https://www.google.com/");
+		// Check if the title of this site is equal to “selenium web site” or contains “SeleniumHQ Browser Automation” (use getTitle()) and print yes/no
+				String titlElementq = driver.getTitle();
+				if (titlElementq.equalsIgnoreCase("google web site") || titlElementq.toLowerCase().contains("google")) {
 
-	private static void PrinterInfo(WebElement element) {
-		// TODO Auto-generated method stub
-		String text = element.getText();
-		String id = element.getAttribute("id");
-		String tag = element.getTagName();
-		boolean display = element.isDisplayed();
-		boolean enabled = element.isEnabled();
+					System.out.println("yes ---- google ");
+					driver.navigate().back();
+					System.out.println("driver.navigate().back() ");
 
-		System.out.println(text + " , " + id + " , " + tag + " , " + display + " , " + enabled);
+				}
+				
+				titlElementq = driver.getTitle();
+				
+				if (titlElement.equalsIgnoreCase("selenium web site") || titlElement.toLowerCase().contains("seleniumhq")) {
 
+					System.out.println("yes ---- selenium ");
+				}
+		
 	}
 
 }
