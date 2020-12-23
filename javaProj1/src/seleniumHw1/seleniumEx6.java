@@ -15,8 +15,8 @@ public class seleniumEx6 {
 		/*
 		 * Exercise 6: Navigate to https://www.selenium.dev/ Check if the title of this
 		 * site is equal to “selenium web site” or contains “SeleniumHQ Browser
-		 * Automation” (use getTitle()) and print yes/no
-		 *  Navigate to 		 * https://www.google.com Check if the title of this site is equal to “Google”
+		 * Automation” (use getTitle()) and print yes/no Navigate to *
+		 * https://www.google.com Check if the title of this site is equal to “Google”
 		 * or contains “google” (use getTitle()) and print yes/no. Navigate back. Check
 		 * again if the title of this site is equal to “selenium web site” or contains
 		 * “SeleniumHQ Browser Automation” (use getTitle()) and print yes/no
@@ -29,49 +29,49 @@ public class seleniumEx6 {
 		driver.manage().window().maximize();
 		driver.get("https://www.selenium.dev/");
 // Check if the title of this site is equal to “selenium web site” or contains “SeleniumHQ Browser Automation” (use getTitle()) and print yes/no
-		if (siteTitleCheck(driver,"selenium web site","seleniumhq")) {
+		if (siteTitleCheck(driver, "selenium web site", "seleniumhq")) {
 
 			System.out.println("yes ---- selenium ");
 		}
 
-		
-		
-		// Navigate to 		 * https://www.google.com Check if the title of this site is equal to “Google”
+		// Navigate to * https://www.google.com Check if the title of this site is equal
+		// to “Google”
 		// * or contains “google” (use getTitle()) and print yes/no. Navigate back.
-		 
+
 		driver.get("https://www.google.com/");
-		// Check if the title of this site is equal to “selenium web site” or contains “SeleniumHQ Browser Automation” (use getTitle()) and print yes/no
-			
-				if (siteTitleCheck(driver,"google web site","google")) {
+		// Check if the title of this site is equal to “selenium web site” or contains
+		// “SeleniumHQ Browser Automation” (use getTitle()) and print yes/no
 
-					System.out.println("yes ---- google ");
-					driver.navigate().back();
-					System.out.println("driver.navigate().back() ");
+		if (siteTitleCheck(driver, "google web site", "google")) {
 
-				}
-				
-			
-				
-				if (siteTitleCheck(driver,"selenium web site","seleniumhq")) {
+			System.out.println("yes ---- google ");
+			driver.navigate().back();
+			System.out.println("driver.navigate().back() ");
 
-					System.out.println("yes ---- selenium ");
-				}
-		
+		}
+
+		if (siteTitleCheck(driver, "selenium web site", "seleniumhq")) {
+
+			System.out.println("yes ---- selenium ");
+		}
+
 	}
 
 	/**
-	 * @param driver 
-	 * @param titlElementq
-	 * @param string 
-	 * @return
+	 * @param driver
+	 * @param equal
+	 * @param contains
+	 * @return boolean
 	 */
 	public static boolean siteTitleCheck(WebDriver driver, String equal, String contains) {
 		String titlElementq = driver.getTitle();
-		
+
 		if (titlElementq.equalsIgnoreCase(equal) || titlElementq.toLowerCase().contains(contains)) {
 			return true;
-		} 
-		return false;
+		}
+		else {
+			return false;
+		}
 	}
 
 }
