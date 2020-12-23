@@ -2,49 +2,48 @@ package seleniumHw1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class seleniumEx1 {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
+		/*
+		 * Exercise 3: Should be implemented with Chrome Open
+		 * http://www.ebay.com/sch/ebayadvsearch Add ‘tent’ to the ‘Enter keywords or
+		 * item number’ text box Add some words to the ‘Exclude words from your search’
+		 * text box Checked the ‘Buy It Now’ check box Press the Search button on the
+		 * bottom of the page Navigate back Press on the search button on the top of the
+		 * page (*can you do it?)
+		 */
 
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\user\\Documents\\selenium\\drivers\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://login.salesforce.com");
-		// automation site form example
-		// https://automation.co.il/tutorials/selenium/demo1/indexID.html
+		driver.get("http://www.ebay.com/sch/ebayadvsearch");
 
-		// about form fulfilled fields
-		driver.findElement(By.cssSelector("#forgot_password_link")).click();
-//
-//		get title 
-		
-		String titleString = driver.getTitle();
-		if (titleString.toLowerCase().contains("forgot your password")) {
-			System.out.println(titleString); // Forgot Your Password | Salesforce
+		/*
+		 * Add ‘tent’ to the ‘Enter keywords or item number’ text box Add some words to
+		 * the ‘Exclude words from your search’ text box Checked the ‘Buy It Now’ check
+		 * box
+		 */
 
-		}
-		
-		driver.findElement(By.cssSelector("#un")).sendKeys("gal@gmail.com");
+		driver.findElement(By.cssSelector("#_nkw")).sendKeys("tent");
+		driver.findElement(By.cssSelector("#_ex_kw")).sendKeys("black");
+//		Checked the ‘Buy It Now’ check box
+//		Press the Search button on the bottom of the page
+		driver.findElement(By.cssSelector("#LH_BIN")).click();
+		WebElement searchBtn = driver.findElement(By.cssSelector(".btn.btn-prim"));
+		searchBtn.click();
+//		Press on the search button on the top of the page (*can you do it?)
+		driver.navigate().back();
+		// driver.findElement(By.cssSelector("#LH_BIN")).click();
+		searchBtn.click();
 
-		driver.findElement(By.cssSelector("#continue")).click();
+//////		driver.quit();
 
-		String msg = 	driver.findElement(By.cssSelector("#forgotPassForm > div > p:nth-child(1)")).getText();
-
-		System.out.println(msg); 
-// #forgotPassForm > div > p:nth-child(1)
-		
-		
-////		driver.quit();
-
-		
-		
-		
-		
-		
 	}
 
 }
