@@ -30,7 +30,7 @@ Check again if the title of this site is equal to “selenium web site” or contain
 		driver.get("https://login.salesforce.com");
 
 		driver.findElement(By.cssSelector("#username")).sendKeys("nipedo1843-tptf@force.com");
-		driver.findElement(By.cssSelector("#password")).sendKeys("RABrab26");
+		driver.findElement(By.cssSelector("#password")).sendKeys("");
 		driver.findElement(By.cssSelector("#rememberUn")).click();
 		boolean rememberMeIsChecked = driver.findElement(By.cssSelector("#rememberUn")).isSelected();
 
