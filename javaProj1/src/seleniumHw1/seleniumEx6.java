@@ -9,18 +9,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.sun.tools.classfile.Annotation.element_value;
 
-public class seleniumEx5 {
+public class seleniumEx6 {
 
 	public static void main(String[] args) throws InterruptedException {
 		/*
-Exercise 6:
-Navigate to  https://www.selenium.dev/
-Check if the title of this site is equal to “selenium web site” or contains “SeleniumHQ Browser Automation” (use getTitle()) and print yes/no
-Navigate to https://www.google.com 
-Check if the title of this site is equal to “Google” or contains “google” (use getTitle()) and print yes/no.
-Navigate back.
-Check again if the title of this site is equal to “selenium web site” or contains “SeleniumHQ Browser Automation” (use getTitle()) and print yes/no
-
+		 * Exercise 5: Should be implemented with ChromeDriver Open this site
+		 * https://login.salesforce.com/ Add user to the user name text box Add password
+		 * to the password text box Checked the ‘remember me’ check box Check if the
+		 * checkbox is checked, if yes Click the ‘Login’ button (you will get an error
+		 * message).
+		 * 
 		 */
 
 		System.setProperty("webdriver.chrome.driver",
